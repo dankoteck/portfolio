@@ -1,29 +1,28 @@
-import { Roboto } from '@next/font/google';
-import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { Ruthie, K2D } from "@next/font/google";
+import { createTheme } from "@mui/material/styles";
 
-export const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+export const ruthie = Ruthie({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-// Create a theme instance.
+export const k2d = K2D({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"],
+});
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
+      main: "#8E2AAA",
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: k2d.style.fontFamily,
   },
 });
 

@@ -1,13 +1,12 @@
-import * as React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import theme, { roboto } from "utils/theme";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 import createEmotionCache from "utils/createEmotionCache";
+import theme, { k2d } from "utils/theme";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className={roboto.className}>
+      <Html lang="en" className={k2d.className}>
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
