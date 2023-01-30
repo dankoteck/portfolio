@@ -1,13 +1,15 @@
 import { ReactElement } from "react";
 
 import {
-  SxProps,
-  Typography,
-  Container,
   Box,
   Button,
+  Container,
   Grid,
+  Typography,
+  SxProps,
 } from "@mui/material";
+import Image from "next/image";
+import Head from "next/head";
 
 import BigAvatar from "components/BigAvatar";
 import ThemeSwitcher from "components/ThemeSwitcher";
@@ -23,21 +25,27 @@ const menus = [
 ];
 
 const sx = {
+  logoContainer: {
+    zIndex: 1,
+  } satisfies SxProps, // for not let Image banner overlapped
+
   logo: {
     fontFamily: ruthie.style.fontFamily,
+    fontSize: "3rem",
     color: "white",
+  } satisfies SxProps,
+
+  banner: {
+    position: "relative",
+    height: 750,
+  } satisfies SxProps,
+
+  bannerImage: {
+    objectFit: "cover",
   } satisfies SxProps,
 
   box: {
     py: 4,
-  } satisfies SxProps,
-
-  banner: {
-    height: 750,
-    backgroundImage: `url(${"images/banner.jpg"})`,
-    backgroundRepeat: "no-repeat",
-    backgroundOrigin: "content-box",
-    backgroundSize: "cover",
   } satisfies SxProps,
 
   navbar: {
@@ -54,33 +62,46 @@ const sx = {
 
 export default function Home(): ReactElement {
   return (
-    <Container maxWidth={false} disableGutters>
-      <Container maxWidth={false} disableGutters sx={sx.banner}>
-        <Container maxWidth="xl">
-          <Box sx={sx.box}>
-            <Grid container spacing={2}>
-              <Grid item xs={4}>
-                <Typography variant="h3" sx={sx.logo}>
-                  &lt; Dang Khoa /&gt;
-                </Typography>
-              </Grid>
+    <>
+      <Head>
+        <title>Perfect portfolio of Dang Khoa</title>
+        <meta name="description" content="Perfect portfolio of Dang Khoa" />
+      </Head>
+      <main>
+        <Container maxWidth={false} disableGutters>
+          <Container maxWidth={false} disableGutters sx={sx.banner}>
+            <Image
+              fill
+              priority
+              alt="banner"
+              src="/images/banner.jpg"
+              style={sx.bannerImage}
+            />
+            <Container maxWidth="xl">
+              <Box sx={sx.box}>
+                <Grid container spacing={2}>
+                  <Grid item xs={4} sx={sx.logoContainer}>
+                    <Typography sx={sx.logo}>&lt; Dang Khoa /&gt;</Typography>
+                  </Grid>
 
-              <Grid item xs={8}>
-                <Box sx={sx.navbar}>
-                  {menus.map((item) => (
-                    <Button sx={sx.navbarItem} key={item.id}>
-                      {item.text}
-                    </Button>
-                  ))}
-                  <ThemeSwitcher sx={sx.navbarItem} defaultChecked />
-                </Box>
-              </Grid>
-            </Grid>
+                  <Grid item xs={8}>
+                    <Box sx={sx.navbar}>
+                      {menus.map((item) => (
+                        <Button sx={sx.navbarItem} key={item.id}>
+                          {item.text}
+                        </Button>
+                      ))}
+                      <ThemeSwitcher sx={sx.navbarItem} defaultChecked />
+                    </Box>
+                  </Grid>
+                </Grid>
 
-            <BigAvatar />
-          </Box>
+                <BigAvatar />
+              </Box>
+            </Container>
+          </Container>
         </Container>
-      </Container>
-    </Container>
+      </main>
+    </>
   );
 }

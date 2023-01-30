@@ -18,7 +18,7 @@ export const k2d = K2D({
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#8E2AAA",
+      main: "#9E10A2",
     },
   },
   typography: {

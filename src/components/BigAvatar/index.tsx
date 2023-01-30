@@ -1,5 +1,8 @@
 import { ReactElement } from "react";
 
+import { GitHub } from "@mui/icons-material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {
   Avatar,
   Badge,
@@ -11,9 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { GitHub } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
 import sx from "./styles";
@@ -93,8 +93,8 @@ function BigAvatar(): ReactElement {
         <Card variant="outlined" sx={sx.card}>
           <CardContent sx={sx.cardContent}>
             <Box sx={{ textAlign: "center" }}>
-              <Typography variant="h4">Dang Khoa</Typography>
-              <Typography variant="h6">Frontend & Mobile Developer</Typography>
+              <Typography sx={sx.h4}>Dang Khoa</Typography>
+              <Typography sx={sx.h6}>Frontend & Mobile Developer</Typography>
             </Box>
 
             <Box sx={sx.socialList}>
@@ -118,7 +118,15 @@ function BigAvatar(): ReactElement {
           overlap="circular"
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         >
-          <Avatar sx={sx.avatar} alt="Dang Khoa" src="images/avatar.jpg" />
+          <Avatar sx={sx.avatar}>
+            {/* <Image
+              fill
+              priority
+              style={{ objectFit: "contain" }}
+              alt="avatar"
+              src="/images/avatar.jpg"
+            /> */}
+          </Avatar>
         </StyledBadge>
       </Box>
     </motion.div>

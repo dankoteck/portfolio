@@ -1,7 +1,8 @@
+import { Switch } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Switch from "@mui/material/Switch";
+import { ReactElement } from "react";
 
-const ThemeSwitcher = styled(Switch)(({ theme }) => ({
+const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
   padding: 7,
@@ -50,5 +51,11 @@ const ThemeSwitcher = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
+function ThemeSwitcher(props: any): ReactElement {
+  return (
+    <StyledSwitch {...props} inputProps={{ "aria-label": "Theme Switcher" }} />
+  );
+}
 
 export default ThemeSwitcher;
