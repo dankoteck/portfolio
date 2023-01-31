@@ -20,6 +20,7 @@
     "framer-motion": "^8.5.4",
     "next": "latest",
     "react": "latest",
+    "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "latest",
     "react-lottie": "^1.2.3"
   },

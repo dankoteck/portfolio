@@ -23,6 +23,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: k2d.style.fontFamily,
+    allVariants: {
+      color: "white",
+    },
   },
 });
 

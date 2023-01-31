@@ -1,21 +1,20 @@
 import { SxProps } from "@mui/material/styles";
 import theme from "utils/theme";
 
-const avatarSize = 300;
+const avatarSize = 130;
 
 const sx = {
   box: {
-    position: "relative",
-    width: avatarSize,
-    margin: "0 auto",
-    pt: theme.spacing(10),
+    py: 8,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   } satisfies SxProps,
 
   avatar: {
     width: avatarSize,
     height: avatarSize,
-    outline: `6px solid ${theme.palette.primary.main}`,
-    position: "relative",
   } satisfies SxProps,
 
   card: {
@@ -48,7 +47,9 @@ const sx = {
   } satisfies SxProps,
 
   h4: {
-    fontSize: "2.125rem",
+    fontSize: "4rem",
+    fontWeight: 700,
+    color: theme.palette.primary.light,
   } satisfies SxProps,
 
   h6: {
